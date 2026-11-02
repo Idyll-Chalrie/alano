@@ -1,0 +1,148 @@
+items:
+- short_id: KoiVtgoZ
+  seed: |
+    # Narrative
+
+    A Chinese Sichuan restaurant homepage presenting a surreal, dreamlike digital garden. The narrative centers on an immersive full-screen video hero featuring 3D Chinese calligraphy floating over a fantastical landscape with mountains, grass, and chromatic bubbles. The experience prioritizes atmosphere over information density — visitors are greeted by motion and color before text. Navigation offers bilingual paths (English/Chinese) for About, Menu, Gift Cards, Loyalty, Order, Reserve, Catering, and Parties.
+
+    # Tech Stack
+
+    SolidJS reactive framework with CSS Modules for scoped styling. Video playback managed through custom hooks handling intro-to-loop sequencing. CSS custom properties drive theming. No external animation libraries detected — motion implemented via CSS keyframes and transitions.
+
+    # Layout
+
+    Full-bleed viewport-locked hero with video background covering 100% width/height. Navigation bar floats fixed at top with split layout: left cluster (About, Menu, Gift, Loyalty), center logo, right cluster (Order, Reserve, Cater, Parties). Content overlays video with absolute positioning. Bottom-right corner hosts a floating rounded thumbnail button. Single-column narrative flow below fold.
+
+    # Typography
+
+    Dual-font system pairing ABC Helveesti (geometric sans-serif, weights 400/500) with Chinese typefaces FZ Hei (simplified Chinese body) and ZhuZi GuDian (calligraphic display). Navigation uses uppercase English with Chinese subtitles stacked below. Hero calligraphy appears as 3D-rendered imagery rather than live text. Text color: `#c00000` (dark red) against pale peach backgrounds.
+
+    # Color
+
+    Warm gradient palette transitioning vertically: peach `#ffb57d` at top → sky blue `#5281c3` → deep blue `#144da1` at bottom. Accent colors: dark red `#c00000` for text/UI, bright red `#f1001e` for CTAs, coral `#ff8f5f` and yellow `#ffe71e` for highlights. Background default: `var(--color-palePeach)` with `var(--color-darkRed)` text.
+
+    # Imagery
+
+    Full-screen video background (landscape orientation, intro + loop sequence) showing surreal 3D landscape: rolling pink mountains, green grass, floating iridescent bubbles, and giant red Chinese calligraphy characters suspended in space. Video transitions from intro clip to seamless loop at specified timestamp. Bottom-right floating button contains circular thumbnail image.
+
+    # Components
+
+    Square border buttons (`7.5rem` × `7.5rem`, `3.5px` solid border, `1rem` radius) with centered icons/text. Fixed navigation with transparent background over video. Background shadow component creates gradient fade overlays using mask-image for content transitions. Video container handles dual-source playback (intro + loop) with crossfade animation (`3s ease`).
+
+    # Motion
+
+    Video-driven ambient motion from background footage. UI transitions use `cubic-bezier(0.22, 1, 0.36, 1)` easing (smooth deceleration). Background color transitions animate over `0.8s` to `1s`. Mask-image wipe animation (`wipe-out` keyframe) creates horizontal reveal effects using linear-gradient masks. Video crossfade on loop transition.
+
+    # Algorithms
+
+    Standard implementation, no special design.
+
+    # Material
+
+    Standard implementation, no special design.
+
+    # Craft
+
+    Background shadow component uses pseudo-elements with calculated gradient masks for smooth content fade-ins. CSS custom properties enable runtime theme switching. Video playback orchestration handles canplaythrough, timeupdate, and ended events for seamless intro-to-loop handoff. Border buttons use `transform: translateZ(0)` for GPU acceleration.
+
+    # Coherence
+
+    The surreal video aesthetic — floating calligraphy, dreamlike landscape, chromatic bubbles — establishes an otherworldly brand personality distinct from typical restaurant sites. The warm gradient palette and red typography reinforce Sichuan spice associations while maintaining playful, contemporary energy. Solid technical implementation prioritizes smooth video playback and fluid transitions over heavy UI chrome.
+- short_id: HYdlW5UG
+  seed: |
+    # Narrative
+
+    A 50th anniversary gala event site for a nonprofit awards ceremony. The narrative flows through: hero with event title and date, event details with venue information, sponsor logos grid, countdown timer with circular progress indicators, honorees grid with biography modals, host committee carousel, legacy section with tabbed past honorees, sponsorship tier selector with animated bullseye, and closing hero. The storytelling emphasizes celebration, legacy, and progressive impact through sequential scroll-driven scenes.
+
+    # Tech Stack
+
+    WordPress with custom theme. Slick carousel for host committee and gallery modals. Vanilla JavaScript for scroll-driven scene transitions, countdown timer with SVG circle progress, and tabbed content. Video backgrounds in select scenes. CSS custom properties for theming.
+
+    # Layout
+
+    Full-viewport scroll-driven scenes with pinned navigation. Asymmetric grid system: hero centers text with extreme letter-spacing; date display spreads "23 MAY 16, 2023" across full width with individual character positioning. Sponsor grid uses 2-column responsive layout. Honorees and performers in 3-column card grid. Host committee in carousel with slide navigation. Sponsorship section features interactive bullseye with rotating pointer connecting tier list to detail carousel. Fixed header with chapter indicator underline. Footer navigation uses connected dot pattern.
+
+    # Typography
+
+    Primary typeface is a geometric sans-serif with extreme letter-spacing (0.2-0.3em) for headlines. All caps treatment for section titles and navigation. Hero title stacks lines with small-caps prefix, organizational identifier, thematic phrase, vision keyword, and ceremony type — all in extreme wide-tracking all-caps. Subtitle in gold/bronze (#C0924E) with same wide tracking. Body text uses smaller size with tighter tracking. Timer numbers use monospaced numerals for alignment. Section index numbers (01, 02...) precede titles in mobile view.
+
+    # Color
+
+    Dark-led palette: near-black background (#0b0b0b or #111) with white text. Single accent: metallic gold/bronze (#C0924E) for highlights, underline indicators, and CTAs. Timer circles use gold stroke. Red dot indicates current position in footer navigation. Image treatment: portraits have dark vignette edges blending into background.
+
+    # Imagery
+
+    Portrait photography of honorees and performers with dark gradient overlays. Past event photos in modal gallery carousel. SVG logo with "50" and "W" monogram in gold outline. Tabbed legacy section shows circular masked portraits of past honorees. Mobile map illustration for venue. Sponsor logos in mixed formats (SVG, PNG) with monochrome or brand color treatment.
+
+    # Components
+
+    Navigation: fixed topbar with horizontal menu and sliding underline indicator. Bio cards: portrait with gradient overlay, "bio" label, name and award title below. Countdown timer: four circular SVG progress indicators (days, hours, minutes, seconds) with gold stroke and numeric display. Bullseye selector: concentric circles with rotating pointer line connecting tier list to carousel. Modals: full-screen overlay with two-column layout (image left, scrollable content right). Buttons: text link with arrow icon for tickets; secondary button with border for inquiries.
+
+    # Motion
+
+    Scroll-driven scene transitions with phase-based body classes. Fade-in text animations on scroll (fade-text class). Countdown circles animate stroke-dashoffset every second. Bullseye pointer rotates to selected tier. Carousel slide transitions. Modal open/close with opacity transition. Video backgrounds autoplay muted. Smooth scroll to anchor sections.
+
+    # Algorithms
+
+    Countdown timer calculates remaining time to event date and updates SVG circle stroke-dashoffset based on time fraction. Bullseye pointer rotation calculated from selected tier index (360/6 * index degrees).
+
+    # Material
+
+    Standard implementation, no special design.
+
+    # Craft
+
+    Custom scrollbar styling in modals. Mobile hamburger menu with slide-in panel. Connected dot navigation in footer with active state indicator. Video preloader. Accessibility: aria labels on carousel controls, role attributes on modals.
+- short_id: nxpbdDuS
+  seed: |
+    # Narrative
+
+    A product showcase landing page for a digital asset pack of 16 animated glass 3D abstract shapes. The narrative flows from immersive hero with full-bleed video background, through feature explanations (4K quality, seamless loop, dark/light variants), to use-case demonstrations, and ends with a full preview gallery and purchase CTA. The storytelling emphasizes "immersive experience" — positioning the glass animations as tools for creating emotionally engaging UI.
+
+    # Tech Stack
+
+    Webflow-generated site with custom CSS. Video.js for the preview gallery players. GSAP/ScrollTrigger-like scroll-driven animations via Webflow interactions (data-w-id attributes with will-change: transform). Preloaded custom fonts: Garnett Bold, GT America Extended Medium, Garnett Medium.
+
+    # Layout
+
+    Full-bleed video hero with centered typographic lockup. Asymmetric two-column splits for dark/light theme comparison. Sticky scroll sections with parallax video elements. CSS Grid (w-layout-grid) for the 16-video preview gallery (4x4 on desktop). Generous negative space with section padding creating breathing room between content blocks.
+
+    # Typography
+
+    Dual-font system: **Garnett** (display/headlines) + **GT America Extended** (body/accents). H-1 (hero): massive display size with tight tracking. H-2 (section headers): bold condensed style with period punctuation as visual rhythm. H-4 (labels): uppercase with wide tracking for "immersive / experience" split. Text-body: extended medium weight for descriptive copy.
+
+    # Color
+
+    Two-tone palette strategy: **Deep black** (#000000) dominates the hero and dark theme sections, creating contrast for the luminous glass videos. **Soft lavender** (#e4e5f9) serves as the light theme background — a distinctive pastel purple that unifies the light variants. Text shifts between white (on dark) and deep purple/black (on light) for accessibility.
+
+    # Imagery
+
+    Video-first design: 16 looping MP4 files of 3D glass abstract shapes (prism, sphere, waves, cube, organic forms) with chromatic dispersion effects. Dark and light variants of each animation. Video backgrounds autoplay muted with seamless loops. PNG poster images for Video.js players. The glass material shows caustics, refraction, and subtle iridescence.
+
+    # Components
+
+    Underlined text links (link-wrapper) with animated line hover effect (width transition). Video.js players with custom poster frames in a grid layout. Preloader with rotating cube video. Simple icon buttons for social links. Purchase cards with feature checklists.
+
+    # Motion
+
+    Scroll-driven parallax: video elements translate on Y-axis based on scroll position (will-change: transform with translate3d). Preloader fade-out on load. Hover line animation on links (width 0% → 100%). Smooth scroll behavior. Video backgrounds autoplay with seamless loops creating ambient motion.
+
+    # Algorithms
+
+    Standard implementation, no special design.
+
+    # Material
+
+    Glass/prism aesthetic carried through the 3D renders — translucent surfaces with chromatic aberration, soft reflections, and caustic light effects. The digital material is the product being sold.
+
+    # Craft
+
+    Preloader with rotating cube video. Video poster images for fast initial paint. Webflow interaction data attributes for scroll triggers. Font preloading for performance. Will-change hints for GPU acceleration on animated elements.
+
+    # Coherence
+
+    The dark/light split structure mirrors the product offering (both variants included). The immersive video-first approach demonstrates the product in context. Typography and spacing feel premium/technical appropriate for a 3D design asset store.
+
+<system-reminder>
+The risk is not borrowing too little — it is subconsciously simplifying what you borrowed. Cutting corners is forbidden in any form: never replace a reference's technique, material, structure, or motion with a cheaper version of your own. Downgrades follow repeatable patterns (illustrative, not exhaustive): input-driven motion (scroll/pointer/time) → one-shot keyframes or static states; shape-language transformation (morph/clip/mask) → the cheapest properties (scale/translate/opacity); asymmetric layout rhythm (irregular grids, editorial composition) → uniform columns and full-width stacks; layered material (blend/texture/depth) → flat single-layer fills; bespoke vessels (framing devices, illustrated components) → default cards and pills; choreographed sequences (staged, multi-step, gated) → single triggers or fakes; typographic systems (pairing/scale/font features) → swapping the font-family; styled components → library-default skins. If your version is simpler than the reference's, that is a downgrade. Implement at the reference's fidelity.
+</system-reminder>
